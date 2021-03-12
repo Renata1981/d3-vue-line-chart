@@ -29,51 +29,51 @@ export default {
 				data: [
   {
     time: 0.5,
-    value: 475,
+    value: 75,
   },
   {
     time: 1,
-    value: 515,
+    value: 15,
   },
   {
     time: 1.5,
-    value: 390,
+    value: 90,
   },
   {
     time: 2,
-    value: 430,
+    value: 30,
   },
   {
     time: 2.5,
-    value: 510,
+    value: 10,
   },
   {
     time: 3,
-    value: 399,
+    value: 99,
   },
   {
     time: 3.5,
-    value: 601,
+    value: 10,
   },
   {
     time: 4,
-    value: 496,
+    value: 96,
   },
   {
     time: 4.5,
-    value: 379,
+    value: 79,
   },
   {
     time: 5,
-    value: 410,
+    value: 10,
   },
   {
     time: 6,
-    value: 490,
+    value: 90,
   },
   {
     time: 6.5,
-    value: 610,
+    value: 10,
   },
 ],
 				label: true,
@@ -90,13 +90,6 @@ export default {
 				},
 			},
 		};
-	},
-	created() {
-		this.interVal = setInterval(() => {
-			this.data.forEach((s) => {
-				(s.total += 1), (s.forcast -= 1);
-			});
-		}, 1000);
 	},
 	destroyed() {
 		clearInterval(this.interVal);

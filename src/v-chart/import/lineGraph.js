@@ -37,11 +37,13 @@ const lineGraph = function chart(mode) {
       domain: [],
       range: [],
       axisHeight: 20,
+      ticks: 5,
     },
     y: {
       label: this.metric,
       axisWidth: 40,
       ticks: 5,
+      domain:[0, 100]
     },
   };
 
