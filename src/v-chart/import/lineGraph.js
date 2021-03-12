@@ -37,13 +37,13 @@ const lineGraph = function chart(mode) {
       domain: [],
       range: [],
       axisHeight: 20,
-      ticks: 5,
+      ticks: 5
     },
     y: {
       label: this.metric,
       axisWidth: 40,
-      ticks: 5,
-      domain:[0, 100]
+      ticks: 22,
+      domain: [0, 100]
     },
   };
 
@@ -131,7 +131,7 @@ const lineGraph = function chart(mode) {
    */
   const buildScales = cs => {
     cs.y.scale = d3.scaleLinear()
-      .domain([this.min, this.max])
+      .domain([0, 100])
       .range([this.displayHeight - cs.x.axisHeight, this.header]);
     this.ds.forEach(t => cs.x.domain.push(t.dim));
     this.ds.forEach((t, i) => cs.x.range.push(((this.width * i) - this.header) / this.ds.length));
