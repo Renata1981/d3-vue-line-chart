@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-6">
-				<v-chart v-bind:chartData="lineGraphData"></v-chart>
+				<v-chart v-bind:chartData="setLinearGraphData"></v-chart>
 			</div>
 		</div>
 	</div>
@@ -12,6 +12,7 @@
 
 export default {
 	name: "lineGraph",
+   props: ['data'],
 	data() {
 		return {
 			interVal: null,
@@ -26,56 +27,7 @@ export default {
 				goal: 600,
 				metric: ["value"],
 				dim: "time",
-				data: [
-  {
-    time: 0.5,
-    value: 75,
-  },
-  {
-    time: 1,
-    value: 15,
-  },
-  {
-    time: 1.5,
-    value: 90,
-  },
-  {
-    time: 2,
-    value: 30,
-  },
-  {
-    time: 2.5,
-    value: 10,
-  },
-  {
-    time: 3,
-    value: 99,
-  },
-  {
-    time: 3.5,
-    value: 10,
-  },
-  {
-    time: 4,
-    value: 96,
-  },
-  {
-    time: 4.5,
-    value: 79,
-  },
-  {
-    time: 5,
-    value: 10,
-  },
-  {
-    time: 6,
-    value: 90,
-  },
-  {
-    time: 6.5,
-    value: 10,
-  },
-],
+        data: [],
 				label: true,
 				legends: {
 					enabled: true,
@@ -90,6 +42,12 @@ export default {
 				},
 			},
 		};
+	},
+  computed: { 
+		setLinearGraphData() { 
+      this.lineGraphData.data = this.data
+      return this.lineGraphData
+    }
 	},
 	destroyed() {
 		clearInterval(this.interVal);
