@@ -4,7 +4,7 @@
  *  @author       Brian Greig
  *
  *  @requires     NPM:d3:Vue
- * 
+ *
 
  * eslint-env browser */
 import lineGraph from './import/lineGraph';
@@ -22,7 +22,7 @@ const Chart = {
             props: ['chartData', 'id'],
             data() {
                 return {
-                    selector: `${this.chartData.selector}-${this.chartData.chartType}${this.id}`,
+                    selector: `${this.chartData.selector}-${this.chartData.chartType}-${this.id}`,
                 };
             },
             methods: {
@@ -49,6 +49,7 @@ const Chart = {
                  * @memberOf Chart
                  */
                 drawGrid(cs) {
+                    console.log('selector? ' + this.chartData.selector)
                     if (
                         this.chartData.grid &&
                         this.chartData.grid.enabled === true

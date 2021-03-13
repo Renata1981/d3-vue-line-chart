@@ -17,7 +17,7 @@
             <br />
          </p>
 	</div>
-</div>	
+</div>
 </template>
 <script>
 import lineGraph from "../components/lineGraph";
@@ -102,6 +102,10 @@ export default {
 		}
 	},
 	mounted()  {
+		this.$nextTick(() => {
+			this.addJson()
+			this.$forceUpdate()
+		})
 		setInterval(() => {this.addJson()},30000)
 	}
 };

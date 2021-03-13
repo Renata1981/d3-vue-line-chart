@@ -43,8 +43,8 @@ export default {
 			},
 		};
 	},
-  computed: { 
-		setLinearGraphData() { 
+  computed: {
+		setLinearGraphData() {
       this.lineGraphData.data = this.data
       return this.lineGraphData
     }
@@ -53,9 +53,7 @@ export default {
 		clearInterval(this.interVal);
 	},
   mounted() {
-    const functionName = 'lineGraph: mounted '
-    this.lineGraphData.data.selector += this.id
-    console.log(functionName + 'this.lineGraphData.data.selector is ' + JSON.stringify(this.lineGraphData.data.selector))
+    this.lineGraphData.selector += this.id
 	},
 };
 </script>
