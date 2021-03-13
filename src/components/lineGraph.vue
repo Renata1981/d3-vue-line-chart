@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-6">
-				<v-chart v-bind:chartData="setLinearGraphData"></v-chart>
+				<v-chart v-bind:chartData="setLinearGraphData" :id="id"></v-chart>
 			</div>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 
 export default {
 	name: "lineGraph",
-   props: ['data'],
+   props: ['data', 'id'],
 	data() {
 		return {
 			interVal: null,
@@ -51,6 +51,11 @@ export default {
 	},
 	destroyed() {
 		clearInterval(this.interVal);
+	},
+  mounted() {
+    const functionName = 'lineGraph: mounted '
+    this.lineGraphData.data.selector += this.id
+    console.log(functionName + 'this.lineGraphData.data.selector is ' + JSON.stringify(this.lineGraphData.data.selector))
 	},
 };
 </script>

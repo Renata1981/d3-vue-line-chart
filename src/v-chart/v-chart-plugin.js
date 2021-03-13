@@ -19,10 +19,10 @@ const d3 = Object.assign({}, require('d3-selection'));
 const Chart = {
     install(Vue) {
         Vue.component('v-chart', {
-            props: ['chartData'],
+            props: ['chartData', 'id'],
             data() {
                 return {
-                    selector: `${this.chartData.selector}-${this.chartData.chartType}`,
+                    selector: `${this.chartData.selector}-${this.chartData.chartType}${this.id}`,
                 };
             },
             methods: {
